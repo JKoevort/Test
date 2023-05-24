@@ -12,9 +12,27 @@ OS: Windows 10 Home Single Language (Version: 21H2, OS Build: 19044.2728)
 
 ## Usage
 
+### Required Packages
+
+The packages required for this package to be run are mocha, sinon, chai, nyc and prompt-sync.
+
 ### Test CSV Files
 
-In order to test each csv file within the test file, one must run "node convert.js" in a terminal window that is rooted in this project folder and then input the name of the csv file, which needs to be within the test folder of the project, to be converted when prompted. The .csv tag must be included in the file name. This will produce an output.json file that is a conversion of the information within the inputted csv file.
+In order to test each csv file within the test file, the following code must be run in a terminal window rooted in this project folder, with the csv name being replaced with the desired csv to be converted:
+
+```bash
+
+npm i
+
+node convert 01_basic.csv
+
+```
+
+If the file name has spaces contained within it, please ensure that you wrap the file name in double quotes.
+
+```bash
+node convert "10 space in name.csv"
+```
 
 ### Unit Testing
 
@@ -39,5 +57,7 @@ The logic used to convert the csv data in to JSON format was fairly simple. As i
 ## Potential Improvements
 
 One potential improvement to this project would be having a script that allows all of the csv files within the test folder to simultaneously be run through the csvjs function, printing json output files for each of them in a separate folder. Although this could have been achieved, it did not seem like what was desired within this project.
+
+This package has also not been either linked or published using npm.   
 
 Another improvement could have been creating more robust unit tests.
